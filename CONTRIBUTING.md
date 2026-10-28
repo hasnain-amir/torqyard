@@ -19,7 +19,7 @@ Do not commit unverified implementation changes.
 
 Use descriptive prefixes:
 
-- `feat/` for new functionality. 
+- `feat/` for new functionality.
 - `fix/` for defect corrections.
 - `test/` for test additions or corrections.
 - `docs/` for documentation.
@@ -72,5 +72,3 @@ Never report a check as passing unless it has actually been executed successfull
 ## Approval
 
 Repository merges, significant architectural changes and production deployments require explicit product-owner approval.
-
- 

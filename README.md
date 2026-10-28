@@ -30,7 +30,7 @@ The product requirements are documented in:
 
 The Markdown document is the development reference. The approved PRD remains authoritative.
 
-## Development 
+## Development
 
 Development follows a feature-branch workflow with focused changes, automated verification and reviewed pull requests.
 
