@@ -1,0 +1,36 @@
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Local runtime
+tmp/
+temp/
+.cache/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editor configuration
+.idea/
+.vscode/
+*.swp
+
+# Test output
+playwright-report/
+test-results/
