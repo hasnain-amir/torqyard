@@ -1,4 +1,4 @@
-# TorqueYard Platform
+# TorqYard Platform
 A UK-focused automotive community platform for car and motorcycle enthusiasts.
 
 The platform combines traditional chronological discussions with member vehicle garages, build journals, automotive discovery and community features.
@@ -25,8 +25,8 @@ Technology selections remain provisional until the relevant feasibility assessme
 ## Requirements
 
 The product requirements are documented in:
-- `torqueyard_PRD_v1.md`
-- `torqueyard_PRD_v1.docx`
+- `docs/torqyard_PRD_v1.md`
+- `docs/torqyard_PRD_v1.docx`
 
 The Markdown document is the development reference. The approved PRD remains authoritative.
 
