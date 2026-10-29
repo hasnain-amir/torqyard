@@ -34,3 +34,6 @@ Thumbs.db
 # Test output
 playwright-report/
 test-results/
+
+# External upstream runtime used during feasibility testing
+/vendor/nodebb/
