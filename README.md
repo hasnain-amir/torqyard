@@ -38,6 +38,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development conventions.
 
 ## Current limitations
 
-NodeBB has not yet been installed or integration-tested in this repository.
+NodeBB v4.16.2 has been installed and manually integration-tested against PostgreSQL 18.4.
 
-No application functionality, database schema or production infrastructure has been implemented.
+The feasibility spike confirmed administrator authentication, email verification through Mailpit, and discussion persistence after an application restart.
+
+The upstream NodeBB checkout remains excluded from Git. Reproducible installation instructions, automated integration tests, project-specific functionality, and production deployment infrastructure have not yet been completed.
+
+See [the NodeBB/PostgreSQL feasibility report](docs/spikes/nodebb-postgresql.md) for the results and outstanding work.
