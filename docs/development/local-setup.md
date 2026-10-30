@@ -71,7 +71,7 @@ cd vendor/nodebb
 During setup, configure:
 
 - URL: `http://127.0.0.1:4567`
-- Database engine: `postgres` (enter exactly as shown)s
+- Database engine: `postgres` (enter exactly as shown)
 - Host: `127.0.0.1`
 - Port: `55432`
 - Database: the `POSTGRES_DB` value from your local environment file
