@@ -40,3 +40,6 @@ test-results/
 
 # Local database backups
 /backups/
+
+# Machine-specific Docker Compose configuration
+/infra/development/compose.local.yaml
