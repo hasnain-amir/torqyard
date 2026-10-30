@@ -10,7 +10,7 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 
 **Current phase:** Phase 0 - Technical Foundation
 
-**Currently working on:** Final validation of the reproducible NodeBB development environment.
+**Currently working on:** Final review and merge of the NodeBB/PostgreSQL feasibility spike.
 
 ### Completed
 

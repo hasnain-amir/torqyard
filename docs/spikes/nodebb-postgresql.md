@@ -2,59 +2,114 @@
 
 ## Status
 
-Passed: manual feasibility verification.
+**Passed — Manual feasibility and clean-installation verification.**
+
+NodeBB v4.16.2 with PostgreSQL 18.4 has been validated as the local development foundation for TorqYard.
 
 ## Platform
 
-- Product: TorqYard
-- NodeBB: v4.16.2
-- Upstream revision: 66c3f49ade1965aabee165f205f6b73eaf71088a
-- Node.js: v24.15.0
-- PostgreSQL: 18.4
-- Local email testing: Mailpit
+| Component                | Version                                    |
+| ------------------------ | ------------------------------------------ |
+| Product                  | TorqYard                                   |
+| NodeBB                   | v4.16.2                                    |
+| NodeBB upstream revision | `66c3f49ade1965aabee165f205f6b73eaf71088a` |
+| Node.js                  | v24.15.0                                   |
+| PostgreSQL               | 18.4                                       |
+| Local email testing      | Mailpit                                    |
+| Infrastructure           | Docker Compose                             |
 
 ## Verified Behaviour
 
-- NodeBB starts successfully using PostgreSQL.
-- Administrator authentication succeeds using local credentials.
-- SMTP email delivery and administrator email verification work through Mailpit.
-- A published discussion survives a NodeBB application restart.
-- The persisted discussion retains its title and body.
-- The Docker Compose project was renamed without losing the existing PostgreSQL data.
-- The application starts from the renamed local project directory.
+The original development environment successfully demonstrated:
+
+- NodeBB installation, startup and PostgreSQL connectivity.
+- Administrator authentication using local credentials.
+- SMTP email delivery and administrator email verification through Mailpit.
+- Discussion creation and persistence after an application restart.
+- Successful migration of the Docker Compose project name without losing PostgreSQL data.
+- Successful application startup after renaming the local project directory.
+
+## Clean Installation Acceptance Test
+
+**Status: Passed**
+
+A separate installation was created using the documented development setup procedure.
+
+The isolated environment used:
+
+- A fresh checkout of NodeBB at the pinned upstream revision.
+- A new PostgreSQL 18.4 database and dedicated Docker volume.
+- NodeBB running on `http://127.0.0.1:4568`.
+- PostgreSQL exposed locally on port `55433`.
+- A separate administrator account.
+
+The following acceptance criteria were verified:
+
+| Acceptance criterion                             | Result |
+| ------------------------------------------------ | ------ |
+| Pinned upstream checkout succeeds                | Passed |
+| Existing checkout overwrite protection works     | Passed |
+| Fresh PostgreSQL instance starts successfully    | Passed |
+| NodeBB setup completes against the new database  | Passed |
+| NodeBB builds and starts                         | Passed |
+| Administrator authentication succeeds            | Passed |
+| Discussion can be created and published          | Passed |
+| Discussion survives a NodeBB restart             | Passed |
+| Original development instance remains accessible | Passed |
+
+The original application continued responding on port `4567` while the isolated instance responded on port `4568`.
+
+The clean-installation test confirms reproducibility on the tested macOS development environment. It does not establish cross-platform or production compatibility.
 
 ## Development Infrastructure
 
-- Compose configuration: `infra/development/compose.yaml`
-- Environment template: `infra/development/.env.example`
-- Compose project: `torqyard`
-- PostgreSQL database: `torqueyard`
-- PostgreSQL user: `torqueyard`
-- Existing persistent volume: `torqueyard_postgres_data`
+The development environment is maintained through:
 
-The legacy PostgreSQL identifiers are retained deliberately to preserve the existing development database.
+- `infra/development/compose.yaml` — PostgreSQL and Mailpit services.
+- `infra/development/.env.example` — environment variable template.
+- `infra/nodebb/upstream.env` — pinned NodeBB release and revision.
+- `infra/nodebb/checkout.sh` — upstream checkout procedure.
+- `docs/development/local-setup.md` — installation and configuration instructions.
 
-The Compose configuration references the existing PostgreSQL volume as an external volume.
+### PostgreSQL Volume Configuration
 
-The upstream NodeBB checkout, runtime configuration, database credentials and local database backups remain excluded from Git.
+Fresh installations use the Docker-managed volume:
 
-## Known Issues
+`torqyard_postgres_data`
 
-- The Web Push plugin rejects the local HTTP URL as its VAPID subject. This is nonfatal during startup.
-- NodeBB reports a potential compatibility issue with `nodebb-plugin-emoji-android`.
-- The initial administrator authentication setup required troubleshooting. Authentication was subsequently verified.
-- Automated integration and persistence tests have not yet been implemented.
+The original development environment retains its existing volume:
+
+`torqueyard_postgres_data`
+
+A local, Git-ignored Compose override maps the existing volume into the renamed Compose project.
+
+The original PostgreSQL database and user retain the internal identifier `torqueyard`. These identifiers are intentionally preserved and do not affect the public product identity.
+
+Runtime configuration, database credentials, local Compose overrides and database backups are excluded from version control.
+
+## Known Issues and Limitations
+
+- NodeBB's Web Push plugin reports a nonfatal VAPID subject error when using the local HTTP development URL.
+- NodeBB reports a potential compatibility warning for `nodebb-plugin-emoji-android`.
+- Automated integration, persistence and end-to-end tests have not yet been implemented.
+- Installation reproducibility has been verified on macOS, but not on other operating systems.
+- The platform has not undergone production security, performance or operational readiness testing.
 
 ## Outstanding Work
 
-- Document a reproducible NodeBB installation pinned to the verified upstream revision.
 - Establish automated integration and persistence tests.
-- Implement project-specific functionality through supported NodeBB extensions.
-- Review authentication, email delivery, plugin compatibility and Web Push configuration for production.
-- Complete production infrastructure and deployment validation.
+- Implement continuous integration and required quality checks.
+- Develop TorqYard-specific functionality using supported NodeBB plugins and theme extensions.
+- Evaluate and address plugin compatibility warnings.
+- Review authentication, email delivery and Web Push configuration for production.
+- Complete production infrastructure, security hardening, monitoring and deployment validation.
 
 ## Conclusion
 
-NodeBB v4.16.2 with PostgreSQL 18.4 is feasible as the local development foundation for TorqYard.
+**The NodeBB v4.16.2 and PostgreSQL 18.4 feasibility spike has passed its manual acceptance criteria.**
 
-This result does not establish production readiness or validate the feasibility of every feature in the product requirements.
+The results establish a working, reproducible local development foundation for TorqYard.
+
+The technical foundation is suitable for progressing into subsequent implementation work, subject to the remaining engineering requirements and feature-specific feasibility assessments.
+
+This result does not establish production readiness or confirm the feasibility of every feature defined in the Product Requirements Document.
