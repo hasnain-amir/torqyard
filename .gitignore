@@ -37,3 +37,6 @@ test-results/
 
 # External upstream runtime used during feasibility testing
 /vendor/nodebb/
+
+# Local database backups
+/backups/

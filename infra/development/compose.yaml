@@ -1,4 +1,4 @@
-name: torqueyard
+name: torqyard
 
 services:
   postgres:
@@ -29,3 +29,5 @@ services:
 
 volumes:
   postgres_data:
+    external: true
+    name: torqueyard_postgres_data
