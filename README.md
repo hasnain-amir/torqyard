@@ -22,11 +22,11 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 - [x] Administrator authentication and email verification
 - [x] Forum discussion persistence testing
 - [x] Repository security checks and branch protection
+- [x] Complete reproducible development setup
+- [x] Finalise feasibility testing and documentation
 
 ### In Progress
 
-- [ ] Complete reproducible development setup
-- [ ] Finalise feasibility testing and documentation
 - [ ] Review and merge the infrastructure pull request
 
 ### Next
