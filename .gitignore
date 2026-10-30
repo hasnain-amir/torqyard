@@ -34,3 +34,12 @@ Thumbs.db
 # Test output
 playwright-report/
 test-results/
+
+# External upstream runtime used during feasibility testing
+/vendor/nodebb/
+
+# Local database backups
+/backups/
+
+# Machine-specific Docker Compose configuration
+/infra/development/compose.local.yaml

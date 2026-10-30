@@ -1,43 +1,65 @@
-# TorqueYard Platform
-A UK-focused automotive community platform for car and motorcycle enthusiasts.
+# TorqYard
 
-The platform combines traditional chronological discussions with member vehicle garages, build journals, automotive discovery and community features.
+**A modern automotive community for UK car and motorcycle enthusiasts.**
 
-## Project status
+TorqYard is being developed as a dedicated platform for automotive discussions, vehicle garages, build journals, clubs, meets, events and community interaction.
 
-Phase 0: Technical foundation and feasibility assessment.
+> **Project status:** In development. Not yet available to the public.
 
-The application architecture and infrastructure are subject to feasibility testing. No production deployment has been established.
+## Development Progress
 
-## Technical direction
+**Current phase:** Phase 0 - Technical Foundation
 
-The proposed foundation consists of:
+**Currently working on:** Final review and merge of the NodeBB/PostgreSQL feasibility spike.
 
-- NodeBB for the forum and community core.
-- PostgreSQL, subject to integration testing.
-- Modular NodeBB plugins for custom platform functionality.
-- A custom theme based on supported NodeBB extension points.
-- TypeScript for project-owned code where appropriate.
-- Docker for reproducible local infrastructure.
+### Completed
 
-Technology selections remain provisional until the relevant feasibility assessment pass.
+- [x] GitHub repository and development workflow
+- [x] NodeBB v4.16.2 installation
+- [x] PostgreSQL 18.4 integration
+- [x] Docker Compose development infrastructure
+- [x] Local email testing with Mailpit
+- [x] Administrator authentication and email verification
+- [x] Forum discussion persistence testing
+- [x] Repository security checks and branch protection
+- [x] Complete reproducible development setup
+- [x] Finalise feasibility testing and documentation
 
-## Requirements
+### In Progress
 
-The product requirements are documented in:
-- `torqueyard_PRD_v1.md`
-- `torqueyard_PRD_v1.docx`
+- [ ] Review and merge the infrastructure pull request
 
-The Markdown document is the development reference. The approved PRD remains authoritative.
+### Next
 
-## Development
+- [ ] Establish automated tests and CI
+- [ ] Begin the TorqYard custom theme and design system
+- [ ] Develop platform-specific community features
 
-Development follows a feature-branch workflow with focused changes, automated verification and reviewed pull requests.
+## Technology
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development conventions.
+| Component                  | Technology      |
+| -------------------------- | --------------- |
+| Community platform         | NodeBB v4.16.2  |
+| Database                   | PostgreSQL 18.4 |
+| Runtime                    | Node.js 24      |
+| Development infrastructure | Docker Compose  |
+| Local email testing        | Mailpit         |
 
-## Current limitations
+Custom functionality will be developed using supported NodeBB plugins and theme extensions.
 
-NodeBB has not yet been installed or integration-tested in this repository.
+## Documentation
 
-No application functionality, database schema or production infrastructure has been implemented.
+- [Product Requirements](docs/torqyard_PRD_v1.md)
+- [Local Development Setup](docs/development/local-setup.md)
+- [Technical Feasibility Report](docs/spikes/nodebb-postgresql.md)
+- [Contribution Guidelines](CONTRIBUTING.md)
+
+## Following Development
+
+TorqYard's co-owners can follow progress through this README and the repository's [commits](https://github.com/hasnain-amir/torqyard/commits), [branches](https://github.com/hasnain-amir/torqyard/branches) and [pull requests](https://github.com/hasnain-amir/torqyard/pulls).
+
+Development follows a feature-branch workflow. Changes are reviewed and verified before merging into the protected `main` branch.
+
+---
+
+_TorqYard is in early development. Planned features and timelines are subject to technical feasibility and implementation progress._
