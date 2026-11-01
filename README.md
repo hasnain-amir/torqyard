@@ -8,32 +8,35 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 
 ## Development Progress
 
-**Current phase:** Phase 0 - Technical Foundation
+**Current phase:** Phase 1 - Testing and Quality Assurance
 
-**Currently working on:** Final review and merge of the NodeBB/PostgreSQL feasibility spike.
+**Currently working on:** Final review and merge of automated security and PostgreSQL integration tests (PR #3).
 
 ### Completed
 
-- [x] GitHub repository and development workflow
+- [x] GitHub repository and protected development workflow
 - [x] NodeBB v4.16.2 installation
 - [x] PostgreSQL 18.4 integration
 - [x] Docker Compose development infrastructure
 - [x] Local email testing with Mailpit
 - [x] Administrator authentication and email verification
 - [x] Forum discussion persistence testing
-- [x] Repository security checks and branch protection
-- [x] Complete reproducible development setup
-- [x] Finalise feasibility testing and documentation
+- [x] Reproducible development setup and feasibility verification
+- [x] Infrastructure foundation merged (PR #1)
+- [x] Automated repository quality checks with GitHub Actions (PR #2)
+- [x] Automated secret scanning with Gitleaks
+- [x] Isolated PostgreSQL integration tests
+- [x] Integration test failure detection and container cleanup verified
 
 ### In Progress
 
-- [ ] Review and merge the infrastructure pull request
+- [ ] Complete PR #3 review and merge
 
 ### Next
 
-- [ ] Establish automated tests and CI
-- [ ] Begin the TorqYard custom theme and design system
-- [ ] Develop platform-specific community features
+- [ ] Introduce NodeBB-specific automated integration tests
+- [ ] Begin the Carbon Amber design system and custom NodeBB theme
+- [ ] Develop vehicle garages, build journals and community features
 
 ## Technology
 
@@ -44,6 +47,8 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 | Runtime                    | Node.js 24      |
 | Development infrastructure | Docker Compose  |
 | Local email testing        | Mailpit         |
+| Automated testing          | GitHub Actions  |
+| Security scanning          | Gitleaks        |
 
 Custom functionality will be developed using supported NodeBB plugins and theme extensions.
 
