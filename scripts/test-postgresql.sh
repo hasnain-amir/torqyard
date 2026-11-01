@@ -31,7 +31,8 @@ ready=false
 for ((attempt = 1; attempt <= 30; attempt++)); do
   echo "PostgreSQL readiness check $attempt/30"
   if docker exec "$container_name" \
-    pg_isready -U torqyard_test -d torqyard_test >/dev/null 2>&1; then
+  pg_isready -h 127.0.0.1 \
+  -U torqyard_test -d torqyard_test >/dev/null 2>&1; then
     ready=true
     break
   fi
