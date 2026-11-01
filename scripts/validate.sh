@@ -6,7 +6,7 @@ cd "$repo_root"
 
 echo "Checking shell script syntax..."
 
-find scripts infra -type f -name '*.sh' -exec bash -n {} +
+find scripts infra -type f -name '*.sh' -exec bash -n {} \;
 
 echo "Checking NodeBB upstream configuration..."
 
@@ -28,7 +28,16 @@ docker compose \
   config --quiet
 
 
+
 echo "Checking Git whitespace..."
+
+if [[ -n "${CI_BASE_SHA:-}" && -n "${CI_HEAD_SHA:-}" ]]; then
+  git diff --check "$CI_BASE_SHA" "$CI_HEAD_SHA"
+else
+  git diff --check
+  git diff --cached --check
+fi
+
 
 git diff --check
 
