@@ -44,3 +44,17 @@ jobs:
           CI_BASE_SHA: ${{ github.event.before }}
           CI_HEAD_SHA: ${{ github.sha }}
         run: ./scripts/validate.sh
+
+  postgresql:
+    name: PostgreSQL integration tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Run PostgreSQL integration tests
+        run: ./scripts/test-postgresql.sh
