@@ -58,3 +58,22 @@ jobs:
 
       - name: Run PostgreSQL integration tests
         run: ./scripts/test-postgresql.sh
+
+  nodebb:
+    name: NodeBB integration tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Run NodeBB integration tests
+        run: ./scripts/test-nodebb.sh
