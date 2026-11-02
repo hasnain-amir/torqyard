@@ -1,0 +1,7 @@
+{
+  "id": "nodebb-theme-torqyard",
+  "name": "TorqYard Carbon Amber",
+  "description": "A custom automotive community theme based on Harmony.",
+  "url": "https://github.com/hasnain-amir/torqyard",
+  "baseTheme": "nodebb-theme-harmony"
+}

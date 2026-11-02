@@ -1,0 +1,52 @@
+:root {
+  color-scheme: dark;
+
+  // Core palette
+  --ty-carbon-950: #111315;
+  --ty-carbon-900: #191c20;
+  --ty-graphite-800: #24282d;
+  --ty-graphite-700: #34393f;
+
+  --ty-amber-500: #ffb000;
+  --ty-amber-400: #ffc247;
+  --ty-amber-600: #d99400;
+
+  // Text
+  --ty-text-primary: #f3f4f5;
+  --ty-text-secondary: #b4bac1;
+  --ty-text-muted: #8c949d;
+
+  // Semantic surfaces
+  --ty-surface-page: var(--ty-carbon-950);
+  --ty-surface-card: var(--ty-carbon-900);
+  --ty-surface-raised: var(--ty-graphite-800);
+
+  // Interactive elements
+  --ty-action-primary: var(--ty-amber-500);
+  --ty-action-hover: var(--ty-amber-400);
+  --ty-action-text: var(--ty-carbon-950);
+
+  // Borders
+  --ty-border-default: var(--ty-graphite-700);
+
+  // Typography
+  --ty-font-body: "Inter", system-ui, sans-serif;
+  --ty-font-heading: "Poppins", "Inter", system-ui, sans-serif;
+
+  // Spacing
+  --ty-space-1: 0.25rem;
+  --ty-space-2: 0.5rem;
+  --ty-space-3: 0.75rem;
+  --ty-space-4: 1rem;
+  --ty-space-6: 1.5rem;
+  --ty-space-8: 2rem;
+
+  // Corners
+  --ty-radius-sm: 0.375rem;
+  --ty-radius-md: 0.625rem;
+  --ty-radius-lg: 1rem;
+
+  // Transitions
+  --ty-transition-fast: 150ms ease;
+  --ty-transition-normal: 250ms ease;
+}
