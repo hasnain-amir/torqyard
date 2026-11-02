@@ -10,7 +10,7 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 
 **Current phase:** Phase 1 - Testing and Quality Assurance
 
-**Currently working on:** Final review and merge of automated security and PostgreSQL integration tests (PR #3).
+**Currently working on:** Final review and CI verification of automated NodeBB integration tests (PR #5).
 
 ### Completed
 
@@ -24,17 +24,19 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 - [x] Reproducible development setup and feasibility verification
 - [x] Infrastructure foundation merged (PR #1)
 - [x] Automated repository quality checks with GitHub Actions (PR #2)
-- [x] Automated secret scanning with Gitleaks
-- [x] Isolated PostgreSQL integration tests
-- [x] Integration test failure detection and container cleanup verified
+- [x] Automated secret scanning with Gitleaks (PR #3)
+- [x] Isolated PostgreSQL integration tests (PR #3)
+- [x] Initial TorqYard brand assets (PR #4)
+- [x] NodeBB HTTP smoke tests passing locally
+- [x] NodeBB integration test failure detection and cleanup verified locally
 
 ### In Progress
 
-- [ ] Complete PR #3 review and merge
+- [ ] Complete PR #5 review and CI verification
+- [ ] Merge automated NodeBB integration tests
 
 ### Next
 
-- [ ] Introduce NodeBB-specific automated integration tests
 - [ ] Begin the Carbon Amber design system and custom NodeBB theme
 - [ ] Develop vehicle garages, build journals and community features
 
@@ -51,6 +53,38 @@ TorqYard is being developed as a dedicated platform for automotive discussions, 
 | Security scanning          | Gitleaks        |
 
 Custom functionality will be developed using supported NodeBB plugins and theme extensions.
+
+## Testing
+
+Repository validation:
+
+```bash
+./scripts/validate.sh
+```
+
+Isolated PostgreSQL integration tests:
+
+```bash
+./scripts/test-postgresql.sh
+```
+
+Isolated NodeBB integration tests:
+
+```bash
+./scripts/test-nodebb.sh
+```
+
+The NodeBB integration runner:
+
+- Creates a disposable Docker network and PostgreSQL database.
+- Checks out the pinned NodeBB upstream revision.
+- Installs and builds an isolated NodeBB instance.
+- Runs HTTP smoke tests against the public homepage and `/api/config`.
+- Removes temporary resources when finished.
+
+The integration tests do not require modifying the existing local development databases or NodeBB installations.
+
+GitHub Actions runs repository validation, PostgreSQL integration tests and NodeBB integration tests as separate jobs.
 
 ## Documentation
 
