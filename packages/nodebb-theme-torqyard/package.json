@@ -4,6 +4,7 @@
   "private": true,
   "description": "Carbon Amber theme for the TorqYard automotive community",
   "license": "UNLICENSED",
+  "main": "library.js",
   "nbbpm": {
     "compatibility": "^4.16.0"
   },

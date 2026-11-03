@@ -1,0 +1,4 @@
+// Reuse Harmony's Bootstrap variable overrides.
+// NodeBB loads this before Bootstrap and the theme stylesheet.
+
+@import "nodebb-theme-harmony/scss/overrides";

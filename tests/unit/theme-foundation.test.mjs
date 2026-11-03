@@ -36,7 +36,12 @@ test("plugin metadata identifies the theme", () => {
   const plugin = readJson("plugin.json");
 
   assert.equal(plugin.id, pkg.name);
-  assert.deepEqual(plugin.hooks, []);
+  assert.equal(plugin.hooks.length, 8);
+
+  for (const hook of plugin.hooks) {
+    assert.equal(typeof hook.hook, "string");
+    assert.equal(typeof hook.method, "string");
+  }
 });
 
 test("stylesheet imports Harmony and Carbon Amber tokens", () => {
@@ -62,4 +67,18 @@ test("Carbon Amber defines core semantic colours", () => {
   ]) {
     assert.ok(tokens.includes(token), `Missing ${token}`);
   }
+});
+
+test("theme maps Harmony fonts to TorqYard assets", () => {
+  const stylesheet = readFileSync(new URL("theme.scss", root), "utf8");
+
+  const plugin = readJson("plugin.json");
+
+  assert.match(
+    stylesheet,
+    /\$font-path:\s*["']\.\/plugins\/nodebb-theme-torqyard["']/,
+  );
+
+  assert.ok(plugin.staticDirs.inter);
+  assert.ok(plugin.staticDirs.poppins);
 });
