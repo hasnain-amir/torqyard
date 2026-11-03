@@ -1,0 +1,17 @@
+{
+  "name": "nodebb-theme-torqyard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Carbon Amber theme for the TorqYard automotive community",
+  "license": "UNLICENSED",
+  "main": "library.js",
+  "nbbpm": {
+    "compatibility": "^4.16.0"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "peerDependencies": {
+    "nodebb-theme-harmony": "3.3.9"
+  }
+}
